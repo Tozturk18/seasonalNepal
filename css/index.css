@@ -50,7 +50,7 @@
     scroll-behavior: smooth !important;
 }
 
-body { background: black; font-family: 'Encode Sans SC', sans-serif;}
+body { background: #141017; font-family: 'Encode Sans SC', sans-serif;}
 
 #title {
     font-family: 'Playfair Display', serif;
@@ -68,21 +68,6 @@ a {
 a:hover {
     color: lightgray;
     text-decoration: none;
-}
-
-#navBar {
-    background-image: url(../static/img/title.jpeg);
-    min-height: 100vh;
-    max-height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-content: center;
-    justify-content: space-between;
 }
 
 nav {
@@ -118,6 +103,21 @@ nav {
 
 .navbar-nav a i:hover {
     color: lightgray !important
+}
+
+#navBar {
+    background-image: url(../static/img/title.jpeg);
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
 }
 
 .welcomeText {
@@ -237,7 +237,7 @@ nav {
     width:55%;
     margin:0;
     padding: 1.25rem;
-    background-color: rgb(190, 142, 52);
+    background-color: #bc8c34;
 
     font-family: 'Encode Sans SC', sans-serif !important;
 }
@@ -409,6 +409,7 @@ nav {
 
 #footer {
     width: 100%;
+    background: black;
 }
 
 #footer .row5 {

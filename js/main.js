@@ -126,3 +126,22 @@ function setScroll(deltaY) {
 }
 
 window.addEventListener("wheel", event => {setScroll(event.deltaY)}, false);
+
+function setDate() {
+    // Use Javascript
+    var delayDate = new Date();
+    var dd = delayDate.getDate() + 5;
+    var mm = delayDate.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+    var yyyy = delayDate.getFullYear();
+    if(dd<10){
+    dd='0'+dd
+    } 
+    if(mm<10){
+    mm='0'+mm
+    } 
+
+    delayDate = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("datefield").setAttribute("min", delayDate);
+}
+
+window.addEventListener("load", event => {setDate();}, {passive: true});
