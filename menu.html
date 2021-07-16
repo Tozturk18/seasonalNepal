@@ -19,6 +19,8 @@
     <script src="https://kit.fontawesome.com/fb42aa3520.js" crossorigin="anonymous"></script>
     <script src="js/menu.js"></script>
     
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
 
@@ -30,9 +32,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a id="navHome" class="nav-item nav-link active" href="index.html#navBar" onclick="setCurrent()"><span id="current"><b>HOME</b></span></a>
+            <a id="navHome" class="nav-item nav-link active" href="index.html#navBar" onclick="setCurrent()">HOME</a>
             <a id="navAbout" class="nav-item nav-link" href="index.html#about" onclick="setCurrent(1)">ABOUT</a>
-            <a id="navMenu" class="nav-item nav-link" href="menu.html" onclick="setCurrent(2)">MENU</a>
+            <a id="navMenu" class="nav-item nav-link" href="menu.html" onclick="setCurrent(2)"><span id="current"><b>MENU</b></span></a>
             <a id="navOrder" class="nav-item nav-link" href="#" onclick="setCurrent(3)">ORDER & CONTACT</a>
             <a id="navEvent" class="nav-item nav-link" href="index.html#events" onclick="setCurrent(4)">EVENTS</a>
             <a class="nav-item nav-link" href="#"><i class="fab fa-facebook-f" style="color:white;"></i></a>
@@ -53,158 +55,209 @@
             </div>
             
             <p>Created by many talented students from Middlebury College</p>
+
+            <a id="order">Submit Order</a>
         </div>
         
         <div id="page1" class="pages">
             <div class="side">
-                <h3>ENTREE</h3>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-            </div>
-
-            <div class="side">
-                <h3>SOUPS</h3>
-                <div id="2" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-                <div id="1" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
-                    <div class="explanation">
-                        <h4>Nepalese Food1</h4>
-                        <p>Tomatos</p>
-                    </div>
-                    <i class="fas fa-plus fa-2x"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-----Decoration------>
-        <section id="decoration">
-            <img src="static/img/decoration-2.png" alt="Nepalese Decoration">
-        </section>
-        <!--------------------->
-
-        <div id="page2" class="pages">
-            <div class="side">
                 <h3>MAIN</h3>
-                <div id="3" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
+                <div id="11" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
                     <div class="explanation">
-                        <h4>Nepalese Food1</h4>
+                        <h4>Nepalese Food1<l> . . . . . . . . . . . . . $3.50</l></h4>
                         <p>Tomatos</p>
                     </div>
-                    <i class="fas fa-plus"></i>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(11)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(11)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                    
+                </div>
+                <div id="12" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Food2<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(12)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(12)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="13" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Food3<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(13)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(13)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="14" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Food4<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(14)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(14)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="15" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Food5<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(15)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(15)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="16" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Food6<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(16)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(16)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="17" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Food7<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(17)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(17)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="18" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Food8<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(18)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(18)"></i>
+                        <div id="counter">1</div>
+                    </div>
                 </div>
             </div>
 
             <div class="side">
                 <h3>SIDES</h3>
-                <div id="4" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
+                <div id="21" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
                     <div class="explanation">
-                        <h4>Nepalese Food1</h4>
+                        <h4>Nepalese Side1<l> . . . . . . . . . . . . . $3.50</l></h4>
                         <p>Tomatos</p>
                     </div>
-                    <i class="fas fa-plus"></i>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(21)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(21)"></i>
+                        <div id="counter">1</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-----Decoration------>
-        <section id="decoration">
-            <img src="static/img/decoration-2.png" alt="Nepalese Decoration">
-        </section>
-        <!--------------------->
-
-        <div id="page3" class="pages">
-            <div class="side">
-                <h3>COLD BEVERAGES</h3>
-                <div id="item1-side1-page3" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
+                <div id="22" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
                     <div class="explanation">
-                        <h4>Nepalese Food1</h4>
+                        <h4>Nepalese Side2<l> . . . . . . . . . . . . . $3.50</l></h4>
                         <p>Tomatos</p>
                     </div>
-                    <i class="fas fa-plus"></i>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(22)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(22)"></i>
+                        <div id="counter">1</div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="side">
-                <h3>DRINKS</h3>
-                <div id="item1-side2-page3" class="item">
-                    <img src="static/img/nepali-food-1.jpeg" alt="">
+                <div id="23" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
                     <div class="explanation">
-                        <h4>Nepalese Food1</h4>
+                        <h4>Nepalese Side3<l> . . . . . . . . . . . . . $3.50</l></h4>
                         <p>Tomatos</p>
                     </div>
-                    <i class="fas fa-plus"></i>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(23)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(23)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="24" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Side4<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(24)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(24)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="25" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Side5<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(25)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(25)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="26" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Side6<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(26)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(26)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="27" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Side7<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(27)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(27)"></i>
+                        <div id="counter">1</div>
+                    </div>
+                </div>
+                <div id="28" class="item">
+                    <img src="static/img/nepali-food-1.jpeg" alt="Food photo">
+                    <div class="explanation">
+                        <h4>Nepalese Side8<l> . . . . . . . . . . . . . $3.50</l></h4>
+                        <p>Tomatos</p>
+                    </div>
+                    <div class="adder">
+                        <i id="minus" class="fas fa-minus fa-2x" onclick="subCart(28)"></i>
+                        <i id="plus" class="fas fa-plus fa-2x" onclick="addCart(28)"></i>
+                        <div id="counter">1</div>
+                    </div>
                 </div>
             </div>
         </div>

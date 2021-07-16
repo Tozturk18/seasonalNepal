@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/img/favicon.svg">
+    <title>Seasonal Nepali Food</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/menu.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/fb42aa3520.js" crossorigin="anonymous"></script>
+    <script src="js/menu.js"></script>
+    
+</head>
+<body>
+
+    <!----Navigation Bar---->
+    <nav class="navbar sticky-top navbar-expand-lg">
+        <a id="title" href="index.html"><b>Seasonal Nepali</b><br>Food</a>
+        <button id="navBut" class="navbar-toggler" type="button" onclick="addBorder()" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars" style="color:white;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a id="navHome" class="nav-item nav-link active" href="index.html#navBar" onclick="setCurrent()"><span id="current"><b>HOME</b></span></a>
+            <a id="navAbout" class="nav-item nav-link" href="index.html#about" onclick="setCurrent(1)">ABOUT</a>
+            <a id="navMenu" class="nav-item nav-link" href="menu.html" onclick="setCurrent(2)">MENU</a>
+            <a id="navOrder" class="nav-item nav-link" href="#" onclick="setCurrent(3)">ORDER & CONTACT</a>
+            <a id="navEvent" class="nav-item nav-link" href="index.html#events" onclick="setCurrent(4)">EVENTS</a>
+            <a class="nav-item nav-link" href="#"><i class="fab fa-facebook-f" style="color:white;"></i></a>
+            <a class="nav-item nav-link" href="#"><i class="fab fa-instagram" style="color:white;"></i></a>
+            <a class="nav-item nav-link" href="#"><i class="far fa-envelope" style="color:white;"></i></a>
+          </div>
+        </div>
+    </nav>
+    <!--------------------->
+
+    <!--------Main--------->
+    <section id="main">
+
+        
+
+    </section>
+    <!--------------------->
+
+    <!-------Footer-------->
+    <section id="footer">
+        <div class="row5">
+            <div class="column">
+                <i class="fas fa-phone-alt" style="color:orange;"></i>
+                <div class="text">
+                    <h5>+1 (802) 443-5000</h5>
+                    <p>Our customer service is ready for your orders anytime during office hours.</p>
+                </div>
+            </div>
+            <div class="column">
+                <i class="fas fa-location-arrow" style="color:orange;"></i>
+                <div class="text">
+                    <h5>14 Old Chapel Rd</h5>
+                    <p>14 Old Chapel Rd, Middlebury, VT 05753, United States</p>
+                </div>
+            </div>
+            <div class="column">
+                <i class="far fa-clock" style="color:orange;"></i>
+                <div class="text">
+                    <h5>Open Monday-Friday</h5>
+                    <p>8:00am - 9:00pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>
