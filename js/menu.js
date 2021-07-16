@@ -96,8 +96,26 @@ function well() {
 }
 
 function order() {
-    
+
+    var foods = document.getElementsByClassName("item");
+
+    //var foodsTitle = foods.querySelector("h4").innerHTML;
+
+    for (var i = 0, k=foods.length; i<k; i++) {
+        for (var j = 0, t=cart.length; j<t; j++) {
+            var title = foods[i].querySelector("h4").innerHTML;
+            if (title == cart[j]) {
+                foods[i].querySelector("#counter").innerHTML = 0;
+                foods[i].querySelector("#counter").style.display = "none";
+                foods[i].querySelector("#minus").style.display = "none";
+                foods[i].querySelector("#plus").style.display = "block";
+            }
+        }
+    }
+
     var email = cart.toString();
+
+    cart = [];
     
     sendEmail(userID, email);
 
