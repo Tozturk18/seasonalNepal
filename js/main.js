@@ -70,14 +70,26 @@ function setScroll(deltaY) {
             document.getElementById("navMenu").innerHTML = "MENU";
             document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
             document.getElementById("navEvent").innerHTML = "EVENTS";
-        } else if (270 < yOffset && yOffset <= 614) {
+        } else if (270 < yOffset && yOffset <= 1111) {
             document.getElementById("navHome").innerHTML = "HOME";
             document.getElementById("navAbout").innerHTML = "<span id=\"current\"><b>ABOUT</b></span>";
             document.getElementById("navMenu").innerHTML = "MENU";
             document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
             document.getElementById("navEvent").innerHTML = "EVENTS";
+        } else if (1111 < yOffset && yOffset < 2356) {
+            document.getElementById("navHome").innerHTML = "HOME";
+            document.getElementById("navAbout").innerHTML = "ABOUT";
+            document.getElementById("navMenu").innerHTML = "<span id=\"current\"><b>MENU</b></span>";
+            document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
+            document.getElementById("navEvent").innerHTML = "EVENTS";
+        } else if (2356 <= yOffset && yOffset < 2588) {
+            document.getElementById("navHome").innerHTML = "HOME";
+            document.getElementById("navAbout").innerHTML = "ABOUT";
+            document.getElementById("navMenu").innerHTML = "MENU";
+            document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
+            document.getElementById("navEvent").innerHTML = "<span id=\"current\"><b>EVENTS</b></span>";
         } else {
-            console.log("fuck");
+            console.log("out of boundaries");
         }
 
     } else {
@@ -87,14 +99,26 @@ function setScroll(deltaY) {
             document.getElementById("navMenu").innerHTML = "MENU";
             document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
             document.getElementById("navEvent").innerHTML = "EVENTS";
-        } else if (250 <= yOffset && yOffset <= 614) {
+        } else if (250 <= yOffset && yOffset < 1080) {
             document.getElementById("navHome").innerHTML = "HOME";
             document.getElementById("navAbout").innerHTML = "<span id=\"current\"><b>ABOUT</b></span>";
             document.getElementById("navMenu").innerHTML = "MENU";
             document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
             document.getElementById("navEvent").innerHTML = "EVENTS";
+        } else if (1080 <= yOffset && yOffset <= 2108) {
+            document.getElementById("navHome").innerHTML = "HOME";
+            document.getElementById("navAbout").innerHTML = "ABOUT";
+            document.getElementById("navMenu").innerHTML = "<span id=\"current\"><b>MENU</b></span>";
+            document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
+            document.getElementById("navEvent").innerHTML = "EVENTS";
+        } else if (2108 < yOffset && yOffset < 2588) {
+            document.getElementById("navHome").innerHTML = "HOME";
+            document.getElementById("navAbout").innerHTML = "ABOUT";
+            document.getElementById("navMenu").innerHTML = "MENU";
+            document.getElementById("navOrder").innerHTML = "ORDER & CONTACT";
+            document.getElementById("navEvent").innerHTML = "<span id=\"current\"><b>EVENTS</b></span>";
         } else {
-            console.log("fuck");
+            console.log("out of boundaries");
         }
     }
     
@@ -102,36 +126,3 @@ function setScroll(deltaY) {
 }
 
 window.addEventListener("wheel", event => {setScroll(event.deltaY)}, false);
-
-
-const prev  = document.querySelector('.prev');
-const next = document.querySelector('.next');
-
-const track = document.querySelector('.track');
-
-let carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-
-window.addEventListener('resize', () => {
-  carouselWidth = document.querySelector('.carousel-container').offsetWidth;
-})
-
-let index = 0;
-
-next.addEventListener('click', () => {
-  index++;
-  prev.classList.add('show');
-  track.style.transform = `translateX(-${index * carouselWidth}px)`;
-  
-  if (track.offsetWidth - (index * carouselWidth) < carouselWidth) {
-    next.classList.add('hide');
-  }
-})
-
-prev.addEventListener('click', () => {
-  index--;
-  next.classList.remove('hide');
-  if (index === 0) {
-    prev.classList.remove('show');
-  }
-  track.style.transform = `translateX(-${index * carouselWidth}px)`;
-})
