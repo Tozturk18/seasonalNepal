@@ -165,7 +165,7 @@ function sendEmail(userID, email) {
         Subject : "Food Order: " + userID + " | Location: " + loca,
         Body : email,
         }).then(
-            message => alert("mail sent successfully")
+            message => alert("Order sent successfully. Your order number is: " + userID)
         );
 
 }
