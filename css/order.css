@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'Playfair Display', serif;
+    src: url(../static/font/PlayfairDisplay-Regular.ttf) format("ttf");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display', serif;
+    src: url(../static/font/PlayfairDisplay-Medium.ttf) format("ttf");
+    font-weight: 400;
+    font-display: swap;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Nanum Gothic', sans-serif;
+    src: url(../static/font/NanumGothic-Regular.ttf) format("ttf");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nanum Gothic', sans-serif;
+    src: url(../static/font/NanumGothic-Bold.ttf) format("ttf");
+    font-weight: 400;
+    font-display: swap;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Encode Sans SC', sans-serif;
+    src: url(../static/font/EncodeSansSC_Condensed-Thin.ttf) format("ttf");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Encode Sans SC', sans-serif;
+    src: url(../static/font/EncodeSansSC_Condensed-Light.ttf) format("ttf");
+    font-weight: 400;
+    font-display: swap;
+    font-style: bold;
+}
+
+* {
+    scroll-behavior: smooth !important;
+}
+
+body { background: #141017; font-family: 'Encode Sans SC', sans-serif;}
+
+#title {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 2em;
+    padding-left: 5vw;
+    
+}
+
+#disc {
+    text-shadow: 2px 2px rgb(92 92 92);
+    font-family: 'Dancing Script', cursive;
+    color: rgb(241, 175, 50);
+
+    margin-bottom: -10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightgray;
+    text-decoration: none;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed !important;
+    width:100% !important;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.185);
+}
+
+#navbarNavAltMarkup {
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    text-align: center;
+    padding-right: 5vw;
+    grid-column-gap: 10px;
+}
+
+.navbar-nav a {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1em;
+    text-shadow: 2px 2px black;
+}
+
+.column {
+    display: flex;
+    padding-right: 1rem;
+}
+
+.column i {
+    padding-right: 10px;
+}
+
+.text {
+    width: min-content;
+}
+
+.text h5 {
+    width: max-content;
+    color: white;
+}
+
+.text p {
+    color: rgb(97, 97, 97);
+    font-size: 0.75rem;
+}
+
+#footer {
+    width: 100%;
+
+    margin-top: 2rem;
+
+    background: black;
+}
+
+#footer .row5 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+
+    padding: 2rem;
+}
+
+#current {
+    color: orange;
+}
+
+#current:hover {
+    color: rgba(255, 166, 0, 0.8);
+}
+
+.navbar-nav a i:hover {
+    color: lightgray !important
+}
+
+#decoration {
+    width:100%;
+    background-color: rgb(190, 142, 52);
+}
+
+#decoration img{
+    width: 100%;
+}
+
+#main {
+    color: white;
+}
+
+.title {
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.subTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.subTitle h1 {
+    font-size: 4rem;
+}
+
+.subTitle h2 {
+    font-size: 3rem;
+}
+
+.title p {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+}
+
+#order2 {
+    padding-bottom: 0;
+    cursor: default;
+
+    text-shadow: none;
+    background: rgba(255, 166, 0, 0.5);
+    color: black;
+    font-family: 'Poppins', sans-serif;
+
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#order2:hover {
+    background: rgba(255, 166, 0, 0.5);
+}
+
+.truck {
+    background: url(../static/img/decoration-2.png);
+    background-repeat: no-repeat;
+    display: flex;
+    padding: 3vh;
+    background-size: cover;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 15vh;
+}
+
+.truck img {
+    width: 30vw;
+    margin: 1rem;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+.truck .explanation {
+    border-radius: 15px;
+    background: rgba(0,0,0,0.8);
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: fit-content;
+    margin-right: 2vh;
+}
+
+.truck .explanation:hover {
+    background: rgb(182, 118, 1);
+}
+
+.truck .explanation h3, p {
+    padding: 1vh;
+}
+
+.truck iframe {
+    width: 40vw;
+    height: 35vh;
+}
+
+.orderContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

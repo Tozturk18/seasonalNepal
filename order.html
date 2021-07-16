@@ -8,7 +8,7 @@
     <title>Seasonal Nepali Food</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/order.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,7 @@
     <script src="https://kit.fontawesome.com/fb42aa3520.js" crossorigin="anonymous"></script>
     <script src="js/menu.js"></script>
     
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
 
@@ -30,10 +31,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a id="navHome" class="nav-item nav-link active" href="index.html#navBar" onclick="setCurrent()"><span id="current"><b>HOME</b></span></a>
+            <a id="navHome" class="nav-item nav-link active" href="index.html#navBar" onclick="setCurrent()">HOME</a>
             <a id="navAbout" class="nav-item nav-link" href="index.html#about" onclick="setCurrent(1)">ABOUT</a>
             <a id="navMenu" class="nav-item nav-link" href="menu.html" onclick="setCurrent(2)">MENU</a>
-            <a id="navOrder" class="nav-item nav-link" href="#" onclick="setCurrent(3)">ORDER & CONTACT</a>
+            <a id="navOrder" class="nav-item nav-link" href="" onclick="setCurrent(3)"><span id="current"><b>ORDER & CONTACT</b></span></a>
             <a id="navEvent" class="nav-item nav-link" href="index.html#events" onclick="setCurrent(4)">EVENTS</a>
             <a class="nav-item nav-link" href="#"><i class="fab fa-facebook-f" style="color:white;"></i></a>
             <a class="nav-item nav-link" href="#"><i class="fab fa-instagram" style="color:white;"></i></a>
@@ -46,7 +47,53 @@
     <!--------Main--------->
     <section id="main">
 
+        <div class="title">
+
+            <div class="subTitle">
+                <h1 id="disc">Discover</h1>
+                <h2>THE LOCATIONS</h2>
+            </div>
+            <p>
+                Please select pick-up locations to get your food from. Your food will be ready as soon as possible. (waiting time: around 30 min)
+                <br>
+                Click on the dark highlighted area with the names of the Pantry Trucks to select a pick-up location.
+            </p>
+
+        </div>
         
+        <div class="locations">
+
+            <div id="1" class="truck">
+                <img src="https://media.istockphoto.com/photos/mike-n-willies-food-truck-in-brooklyn-nyc-picture-id458929599" alt="">
+                <div class="explanation" onclick="addLocation(1)">
+                    <h3>Cannon Park Pantry Truck</h3>
+                    <p>Our Food Pantry Truck will be available at Cannon Park, Middlebury, Vermont, USA.</p>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d620.1806366102743!2d-73.1696497701874!3d44.012676986943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb55d040a68b085%3A0x3c3aef8af649b3a0!2sCannon%20Park!5e0!3m2!1sen!2str!4v1626458240368!5m2!1sen!2str" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div id="2" class="truck">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAg2PDzfNi9UEga4_cOyac2FqhPN8LKSss0A&usqp=CAU" alt="">
+                <div class="explanation" onclick="addLocation(2)">
+                    <h3>Blessed Virgin Mary Church Pantry Truck</h3>
+                    <p>Our Food Pantry Truck will be available at Blessed Virgin Mary Church, Middlebury, Vermont, USA.</p>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1584.5426383991123!2d-73.17543331689264!3d44.010509342457965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb55d00509295c7%3A0xe11b0d562bcb66df!2sAssumption%20of%20the%20Blessed%20Virgin%20Mary!5e0!3m2!1sen!2str!4v1626459357087!5m2!1sen!2str" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div id="3" class="truck">
+                <img src="https://static01.nyt.com/images/2021/06/08/multimedia/24sp-smallbiz-foodtrucks2/24sp-smallbiz-foodtrucks2-videoSixteenByNineJumbo1600.jpg" alt="">
+                <div class="explanation" onclick="addLocation(3)">
+                    <h3>Brian Hillerman Park Pantry Truck</h3>
+                    <p>Our Food Pantry Truck will be available at Brian Hillerman Park, Middlebury, Vermont, USA.</p>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1453.0373471410908!2d-73.17204133850443!3d44.01029132948915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb55d5e753df071%3A0x7fa76a64de762e6c!2sBrian%20Hillerman%20Park!5e0!3m2!1sen!2str!4v1626459430254!5m2!1sen!2str" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="orderContainer">
+                <button id="order2">Submit Order</button>
+            </div>
+        </div>
 
     </section>
     <!--------------------->

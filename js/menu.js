@@ -1,3 +1,5 @@
+var loca;
+var cart = [];
 var buttonPressed = false;
 
 function addBorder() {
@@ -10,8 +12,6 @@ function addBorder() {
     }
     
 }
-
-var cart = [];
 
 function addCart(id) {
 
@@ -33,7 +33,7 @@ function addCart(id) {
 
     document.getElementById("order").style.background = "rgba(255, 166, 0, 1)";
     document.getElementById("order").style.cursor = "pointer";
-    //document.getElementById("order").setAttribute("href", "order.html");
+    document.getElementById("order").setAttribute("href", "order.html");
 
     counter.innerHTML = foodCount;
     counter.style.display = "block";
@@ -85,17 +85,46 @@ function subCart(id) {
 
 }
 
+function addLocation(id) {
+
+    var truck = document.getElementById(id);
+    loca = truck.querySelector("h3").innerHTML;
+    truck.querySelector(".explanation").style.background = "green";
+
+    var trucks = document.getElementsByClassName("truck");
+    for (var i = 0, j=trucks.length; i<j; i++) {
+        if (trucks[i].querySelector(".explanation").style.background == "green" && i+1 != id) {
+            trucks[i].querySelector(".explanation").style.background = "rgba(0,0,0,0.8)";
+        }
+    }
+
+    document.getElementById("order2").disabled = false;
+    document.getElementById("order2").style.background = "rgba(255, 166, 0, 1)";
+    document.getElementById("order2").style.cursor = "pointer";
+
+}
+
+function casheCart() {
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+}
+
 var userID = 0;
 
 function well() {
     //document.getElementById("order").addEventListener("click", order(), false);
 
-    document.getElementById("order").addEventListener("click", event => {order();}, {passive: false});
+    document.getElementById("order2").addEventListener("click", event => {order();}, {passive: false});
+    document.getElementById("order2").disabled = true;
 
     console.log("well");
 }
 
 function order() {
+
+    var trucks = document.getElementsByClassName("truck");
+    for (var i = 0, j=trucks.length; i<j; i++) {
+        trucks[i].querySelector(".explanation").style.background = "rgba(0,0,0,0.8)";
+    }
 
     var foods = document.getElementsByClassName("item");
 
@@ -113,7 +142,9 @@ function order() {
         }
     }
 
-    var email = cart.toString();
+    var newCart = JSON.parse(sessionStorage.getItem("cart"));
+
+    var email = newCart.toString();
 
     cart = [];
     
@@ -131,7 +162,7 @@ function sendEmail(userID, email) {
         Password : "aekcazzcqivmpzdv",
         To : "niyyahfoundation2@gmail.com",
         From : "niyyahfoundation2@gmail.com",
-        Subject : "Food Order" + userID,
+        Subject : "Food Order: " + userID + " | Location: " + loca,
         Body : email,
         }).then(
             message => alert("mail sent successfully")
