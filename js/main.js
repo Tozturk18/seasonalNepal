@@ -144,4 +144,65 @@ function setDate() {
     document.getElementById("datefield").setAttribute("min", delayDate);
 }
 
-window.addEventListener("load", event => {setDate();}, {passive: true});
+window.addEventListener("load", event => {setDate(); loader();}, {passive: true});
+
+function filled() {
+
+    var firstName = document.getElementById("firstName");
+    var lastName = document.getElementById("lastName");
+    var dateField = document.getElementById("datefield");
+    var email = document.getElementById("email")
+    var button = document.getElementById("submit");
+
+    if (firstName.value != "" && lastName.value != "" && dateField.value != "" && email.value != "") {
+        button.disabled = false;
+    }
+
+}
+
+function loader() {
+
+    document.getElementById("submit").disabled = true;
+
+    console.log("well");
+}
+
+function order() {
+
+    sendEmail();
+    
+}
+
+function sendEmail() {
+
+    var firstName = document.getElementById("firstName");
+    var lastName = document.getElementById("lastName");
+    var dateField = document.getElementById("datefield");
+    var timE = document.getElementById("time");
+    var tel = document.getElementById("tel");
+    var email = document.getElementById("email")
+    var button = document.getElementById("submit");
+
+
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username : "niyyahfoundation2@gmail.com",
+        Password : "aekcazzcqivmpzdv",
+        To : "niyyahfoundation2@gmail.com",
+        From : "niyyahfoundation2@gmail.com",
+        Subject : "Event Booking",
+        Body : "<br>" + firstName.value + " " + lastName.value + " has requested booking an event for " + dateField.value + " at " + timE.value + ". <br><br>Their phone number is: " + tel.value + "<br>Their email is: " + email.value,
+        }).then(
+            message => alert("Event booking request has been sent. We will reply to you as soon as possible with confirmation.")
+        );
+
+    firstName.value = "";
+    lastName.value = "";
+    dateField.value = "";
+    timE.value = "";
+    tel.value = "";
+    email.value = "";
+        
+    button.disabled = true;
+
+}

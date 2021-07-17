@@ -20,6 +20,7 @@
     <script src="https://kit.fontawesome.com/fb42aa3520.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
 
@@ -33,9 +34,9 @@
           <div class="navbar-nav">
             <a id="navHome" class="nav-item nav-link active" href="#navBar" onclick="setCurrent()"><span id="current"><b>HOME</b></span></a>
             <a id="navAbout" class="nav-item nav-link" href="#about" onclick="setCurrent(1)">ABOUT</a>
-            <a id="navMenu" class="nav-item nav-link" href="menu.html" onclick="setCurrent(2)">MENU</a>
-            <a id="navOrder" class="nav-item nav-link" href="order.html" onclick="setCurrent(3)">ORDER & CONTACT</a>
-            <a id="navEvent" class="nav-item nav-link" href="#events" onclick="setCurrent(4)">EVENTS</a>
+            <a id="navMenu" class="nav-item nav-link" href="menu2.html" onclick="setCurrent(2)">MENU</a>
+            <a id="navOrder" class="nav-item nav-link" href="menu.html" onclick="setCurrent(3)">ORDER & CONTACT</a>
+            <a id="navEvent" class="nav-item nav-link" href="events.html" onclick="setCurrent(4)">EVENTS</a>
             <a class="nav-item nav-link" href="#"><i class="fab fa-facebook-f" style="color:white;"></i></a>
             <a class="nav-item nav-link" href="#"><i class="fab fa-instagram" style="color:white;"></i></a>
             <a class="nav-item nav-link" href="#"><i class="far fa-envelope" style="color:white;"></i></a>
@@ -53,7 +54,7 @@
             <p>An organization created by students at Middlebury Colege with the motif of helping others.</p>
             <p>
                 <a id="order" href="menu.html">Order Now</a>
-                <a id="menuView" href="menu.html">View Menu</a>
+                <a id="menuView" href="menu2.html">View Menu</a>
             </p>
         </div>
         <!------Main Info------>
@@ -87,38 +88,38 @@
                     </div>
                     <div id="book">
                         <h4><b>BOOK AN EVENT</b></h4>
-                        <form action="#" class="appointment-form">
+                        <form class="appointment-form">
                             <div class="d-md-flex">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name" required>
+                                    <input id="firstName" type="text" class="form-control" placeholder="First Name" onchange="filled()" required>
                                 </div>
                                 <div class="form-group ml-md-4">
-                                    <input type="text" class="form-control" placeholder="Last Name" required>
+                                    <input id="lastName" type="text" class="form-control" placeholder="Last Name" onchange="filled()" required>
                                 </div>
                             </div>
                             <div class="d-md-flex">
                                 <div class="form-group">
                                 <div class="input-wrap">
                                 <div class="icon"><span class="ion-md-calendar"></span></div>
-                                    <input id="datefield" type="date" class="form-control appointment_date" placeholder="Date" required>
+                                    <input id="datefield" type="date" class="form-control appointment_date" placeholder="Date" onchange="filled()" required>
                                 </div>
                             </div>
                             <div class="form-group ml-md-4">
                                 <div class="input-wrap">
                                     <div class="icon"><span class="ion-ios-clock"></span></div>
-                                        <input type="time" class="form-control appointment_time ui-timepicker-input" placeholder="Time" autocomplete="off">
+                                        <input id="time" type="time" class="form-control appointment_time ui-timepicker-input" placeholder="Time" onchange="filled()" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="form-group ml-md-4">
-                                    <input type="tel" class="form-control" placeholder="Phone" pattern="[0-9]{10}">
+                                    <input id="tel" type="tel" class="form-control" placeholder="Phone" pattern="[0-9]{10}" onchange="filled()">
                                 </div>
                             </div>
                             <div class="d-md-flex">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email" required>
+                                    <input id="email" type="email" class="form-control" placeholder="Email" onchange="filled()" required>
                                 </div>
                                 <div class="form-group ml-md-4">
-                                    <input id="submit" type="submit" value="Appointment" class="btn btn-white py-3 px-4">
+                                    <button id="submit" type="submit" class="btn btn-white py-3 px-4" onclick="order()">Appointment</button>
                                 </div>
                             </div>
                         </form>
@@ -159,7 +160,7 @@
                         <p>
                             Special Nepalese Food prepared by College Students from Middlebury College.
                         </p>
-                        <a id="viewMenu" href="menu.html">View Menu</a>
+                        <a id="viewMenu" href="menu2.html">View Menu</a>
                     </div>
                     <div class="popular">
                         <h1>Popular Dishes</h1>
@@ -169,40 +170,40 @@
                             <span id="left"><i class="fas fa-chevron-left"></i></span>
                             <div id="inner">
                               <div id="1" class="item">
-                                <a href="">
-                                  <img src="http://placekitten.com/150/150" />
+                                <a href="menu.html">
+                                  <img src="http://placekitten.com/150/150" alt="Popular Food Images Carousel">
                                   <h4>Nepalese Food 1</h4>
                                   <p>Hmmm Yummy!!</p>
                                 </a>
                               </div>
                               <!--id1-->
                               <div id="2" class="item">
-                                <a href="">
-                                  <img src="http://placekitten.com/200/200" />
+                                <a href="menu.html">
+                                  <img src="http://placekitten.com/200/200" alt="Popular Food Images Carousel">
                                   <h4>Nepalese Food 2</h4>
                                   <p>Hmmm Yummy!!</p>
                                 </a>
                               </div>
                               <!--id2-->
                               <div id="3" class="item">
-                                <a href="">
-                                  <img src="http://placekitten.com/300/300" />
+                                <a href="menu.html">
+                                  <img src="http://placekitten.com/300/300" alt="Popular Food Images Carousel">
                                   <h4>Nepalese Food 3</h4>
                                   <p>Hmmm Yummy!!</p>
                                 </a>
                               </div>
                               <!--id3-->
                               <div id="4" class="item" style="display: none;">
-                                <a href="">
-                                  <img src="http://placekitten.com/400/400" />
+                                <a href="menu.html">
+                                  <img src="http://placekitten.com/400/400" alt="Popular Food Images Carousel">
                                   <h4>Nepalese Food 4</h4>
                                   <p>Hmmm Yummy!!</p>
                                 </a>
                               </div>
                               <!--id3-->
                               <div id="5" class="item" style="display: none;">
-                                <a href="">
-                                  <img src="http://placekitten.com/500/500" />
+                                <a href="menu.html">
+                                  <img src="http://placekitten.com/500/500" alt="Popular Food Images Carousel">
                                   <h4>Nepalese Food 5</h4>
                                   <p>Hmmm Yummy!!</p>
                                 </a>
@@ -221,10 +222,10 @@
                         <!--id=carousel-->
 
                         <div id="images">
-                          <img src="http://placekitten.com/550/550" alt="">
-                          <img src="http://placekitten.com/650/650" alt="">
-                          <img src="http://placekitten.com/750/750" alt="">
-                          <img src="http://placekitten.com/850/850" alt="">
+                          <img src="http://placekitten.com/550/550" alt="Popular Food Images Static">
+                          <img src="http://placekitten.com/650/650" alt="Popular Food Images Static">
+                          <img src="http://placekitten.com/750/750" alt="Popular Food Images Static">
+                          <img src="http://placekitten.com/850/850" alt="Popular Food Images Static">
                         </div>
                         
                     </div>

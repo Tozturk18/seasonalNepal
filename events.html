@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/img/favicon.svg">
+    <title>Seasonal Nepali Food</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/events.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/fb42aa3520.js" crossorigin="anonymous"></script>
+    <script src="js/event.js"></script>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+
+    <!----Navigation Bar---->
+    <nav class="navbar sticky-top navbar-expand-lg">
+        <a id="title" href="index.html"><b>Seasonal Nepali</b><br>Food</a>
+        <button id="navBut" class="navbar-toggler" type="button" onclick="addBorder()" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars" style="color:white;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a id="navHome" class="nav-item nav-link active" href="#navBar" onclick="setCurrent()">HOME</a>
+            <a id="navAbout" class="nav-item nav-link" href="#about" onclick="setCurrent(1)">ABOUT</a>
+            <a id="navMenu" class="nav-item nav-link" href="menu2.html" onclick="setCurrent(2)">MENU</a>
+            <a id="navOrder" class="nav-item nav-link" href="menu.html" onclick="setCurrent(3)">ORDER & CONTACT</a>
+            <a id="navEvent" class="nav-item nav-link" href="events.html" onclick="setCurrent(4)"><span id="current"><b>EVENTS</b></span></a>
+            <a class="nav-item nav-link" href="#"><i class="fab fa-facebook-f" style="color:white;"></i></a>
+            <a class="nav-item nav-link" href="#"><i class="fab fa-instagram" style="color:white;"></i></a>
+            <a class="nav-item nav-link" href="#"><i class="far fa-envelope" style="color:white;"></i></a>
+          </div>
+        </div>
+    </nav>
+    <!--------------------->
+
+        
+        <!-------Events-------->
+        <section id="events">
+            <div class="eventTitle">
+                <h1 id="disc">Discover</h1>
+                <h2>THE EVENTS</h2>
+                <p>Discover our past and up-comming Events.</p>
+            </div>
+
+            <div class="futureEvents">
+                <h1>Future Events</h1>
+                <div id="event">
+                    <div id="1">
+                        <div class="row">
+                            <div class="col">
+                                <div class="title">
+                                    <h3 id="title"><strong> • Tuna's Birthday • </strong></h3>
+                                    <h3><strong>Saturday, July 24, 2021 • </strong></h3>
+                                    <h3><strong>4:00 PM - 6:00 PM EDT</strong></h3>
+                                    <p><strong>O.N.E. COMMUNITY CENTER- 20 ALLEN ST., BURLINGTON</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <img src="static/img/tuna.jpeg" alt="Event Image">
+                            </div>
+                            <div class="col">
+                                <p>
+                                    Join Tuna as he celebrates his birthday at the Summer Ville at 6E/2 Nazım Hikmet St. in Datça, Turkey on <strong>Monday, July 26, 2021 • 4:00 PM - 6:00 PM EDT.</strong>  Meat, vegan, and gluten-free options will all be available. <strong>YOU MUST PURCHASE IN ADVANCE.  </strong>
+                                </p>
+                                <p><strong>*TICKET SALES END Sunday, July 25 • 4:00 PM - 6:00 PM EDT</strong></p>
+                                <p><strong>Location:</strong> ONE COMMUNITY CENTER, 20 Allen St. BURLINGTON</p>
+                                <p><strong>Time:</strong> 4-6pm</p>
+                                <p><strong>Cost:</strong> $20/adult, no childeren allowed</p>
+                                <p>*PLEASE bring your own bag! We will be assigning pickup times on Friday evening. If you prefer to come at a specific time.</p>
+                                <div class="eventOrder">
+                                    <a class="menu" href="menu.html">View Menu</a>
+                                    <button class="tickets" onclick="expand(1)">Purchase Tickets</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div id="book1" class="book bookEvent">
+                                    <h4><b>BOOK AN EVENT</b></h4>
+                                    <form class="appointment-form">
+                                        <div class="d-md-flex">
+                                            <div class="form-group">
+                                                <input id="firstName1" type="text" class="form-control" placeholder="First Name" onchange="eventFilled()" required="">
+                                            </div>
+                                            <div class="form-group ml-md-4">
+                                                <input id="lastName1" type="text" class="form-control" placeholder="Last Name" onchange="eventFilled()" required="">
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex">
+                                            <div class="form-group">
+                                                <input id="email1" type="email" class="form-control" placeholder="Email" onchange="eventFilled()" required="">
+                                            </div><div class="form-group ml-md-4">
+                                                <input id="tel1" type="tel" class="form-control" placeholder="Phone" pattern="[0-9]{10}" onchange="eventFilled()">
+                                            </div>
+                                        </div>
+                                        <div class="d-md-flex">
+                                            <div class="form-group md-4 orc">
+                                                <button id="submit1" class="submit" type="submit" class="btn btn-white py-3 px-4" onclick="purchase()" disabled="">Appointment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-----Decoration------>
+            <section id="decoration">
+                <img src="static/img/decoration-2.png" alt="Nepalese Decoration">
+            </section>
+            <!--------------------->
+
+            <div class="pastEvents">
+                <h1>Past Events</h1>
+                <div id="event">
+                    <h3>Sorry. Currently There are no events</h3>
+                </div>
+            </div>
+
+        </section>
+        <!--------------------->
+
+        <!------Main Info------>
+        <section id="main">
+            <div class="container-wrap">
+                <div class="wrap d-md-flex align-items-xl-end">
+                    <div id="info">
+                        <div class="row">
+                            <div class="column">
+                                <i class="fas fa-phone-alt" style="color:orange;"></i>
+                                <div class="text">
+                                    <h5>+1 (802) 443-5000</h5>
+                                    <p>Our customer service is ready for your orders anytime during office hours.</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <i class="fas fa-location-arrow" style="color:orange;"></i>
+                                <div class="text">
+                                    <h5>14 Old Chapel Rd</h5>
+                                    <p>14 Old Chapel Rd, Middlebury, VT 05753, United States</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <i class="far fa-clock" style="color:orange;"></i>
+                                <div class="text">
+                                    <h5>Open Monday-Friday</h5>
+                                    <p>8:00am - 9:00pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <h4><b>BOOK AN EVENT</b></h4>
+                        <form class="appointment-form">
+                            <div class="d-md-flex">
+                                <div class="form-group">
+                                    <input id="firstName" type="text" class="form-control" placeholder="First Name" onchange="filled()" required>
+                                </div>
+                                <div class="form-group ml-md-4">
+                                    <input id="lastName" type="text" class="form-control" placeholder="Last Name" onchange="filled()" required>
+                                </div>
+                            </div>
+                            <div class="d-md-flex">
+                                <div class="form-group">
+                                <div class="input-wrap">
+                                <div class="icon"><span class="ion-md-calendar"></span></div>
+                                    <input id="datefield" type="date" class="form-control appointment_date" placeholder="Date" onchange="filled()" required>
+                                </div>
+                            </div>
+                            <div class="form-group ml-md-4">
+                                <div class="input-wrap">
+                                    <div class="icon"><span class="ion-ios-clock"></span></div>
+                                        <input id="time" type="time" class="form-control appointment_time ui-timepicker-input" placeholder="Time" onchange="filled()" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group ml-md-4">
+                                    <input id="tel" type="tel" class="form-control" placeholder="Phone" pattern="[0-9]{10}" onchange="filled()">
+                                </div>
+                            </div>
+                            <div class="d-md-flex">
+                                <div class="form-group">
+                                    <input id="email" type="email" class="form-control" placeholder="Email" onchange="filled()" required>
+                                </div>
+                                <div class="form-group ml-md-2 orc">
+                                    <button id="submit" class="submit" type="submit" class="btn btn-white py-3 px-4" onclick="order()">Appointment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--------------------->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>
