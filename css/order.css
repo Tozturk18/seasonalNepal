@@ -194,7 +194,7 @@ nav {
     margin-bottom: 3vh;
 }
 
-#order2 {
+/*#order2 {
     padding-bottom: 0;
     cursor: default;
 
@@ -209,7 +209,7 @@ nav {
 
 #order2:hover {
     background: rgba(255, 166, 0, 0.5);
-}
+}*/
 
 .truck {
     background: url(../static/img/decoration-2.png);
@@ -220,10 +220,13 @@ nav {
     align-items: center;
     width: fit-content;
     margin-bottom: 15vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .truck img {
-    width: 30vw;
+    width: 30%;
     margin: 1rem;
     border: 3px solid black;
     border-radius: 15px;
@@ -239,23 +242,150 @@ nav {
     justify-content: center;
     height: fit-content;
     margin-right: 2vh;
+    width: 30%;
 }
 
 .truck .explanation:hover {
     background: rgb(182, 118, 1);
 }
 
-.truck .explanation h3, p {
+.truck .explanation h3, .truck .explanation p {
     padding: 1vh;
 }
 
 .truck iframe {
-    width: 40vw;
-    height: 35vh;
+    width: 35%;
+    height: 25rem;
 }
 
 .orderContainer {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+
+#main {
+    width: 100%;
+    z-index: 2;
+    margin-top: 16vh;
+
+    font-family: 'Encode Sans SC', sans-serif !important;
+}
+
+#main .container {
+    padding: 0;
+    margin: 0;
+}
+
+#info {
+
+    width: -webkit-fill-available;
+    padding: 2rem;
+    margin: 0;
+    background-color: black;
+
+}
+
+#info .row {
+    justify-content: flex-end;
+    padding-right: 5rem;
+}
+
+.column {
+    display: flex;
+    padding-right: 1rem;
+}
+
+.column i {
+    padding-right: 10px;
+}
+
+.text {
+    width: min-content;
+}
+
+.text h5 {
+    width: max-content;
+    color: white;
+}
+
+.text p {
+    color: rgb(97, 97, 97);
+    font-size: 0.75rem;
+}
+
+#book {
+    width:55%;
+    margin:0;
+    padding: 1.25rem;
+    background-color: #bc8c34;
+
+    font-family: 'Encode Sans SC', sans-serif !important;
+}
+
+#book h4 {
+    padding-bottom: 0.5rem;
+    color: white;
+}
+
+#book input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+#book input::placeholder {
+    color: whitesmoke;
+}
+
+#book .d-md-flex {
+    justify-content: space-evenly;
+}
+
+.form-group {
+    width:100%;
+}
+
+#book #order2 {
+    background-color: whitesmoke;
+    color: black;
+    width: -webkit-fill-available;
+}
+
+@media (max-width: 1200px) {
+
+    #info .row {
+        justify-content: end;
+        padding-right: 5rem;
+    }
+
+    #book {
+        width: 100%;
+    }
+
+    @media (max-width: 750px) {
+        #info .row {
+            justify-content: end;
+            padding-right: 5rem;
+        }
+    
+        #book {
+            width: 100%;
+        }
+
+        .truck img {
+            width: 100%;
+        }
+
+        .truck .explanation {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .truck iframe {
+            width: 100%;
+        }
+    
+    }
 }
