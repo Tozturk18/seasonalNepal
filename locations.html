@@ -19,7 +19,6 @@
     <script src="https://kit.fontawesome.com/fb42aa3520.js" crossorigin="anonymous"></script>
     <script src="js/order.js"></script>
     
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
 
@@ -33,8 +32,8 @@
           <div class="navbar-nav">
             <a id="navHome" class="nav-item nav-link active" href="index.html#navBar" onclick="setCurrent()">HOME</a>
             <a id="navAbout" class="nav-item nav-link" href="index.html#about" onclick="setCurrent(1)">ABOUT</a>
-            <a id="navMenu" class="nav-item nav-link" href="locations.html" onclick="setCurrent(2)">LOCATIONS</a>
-            <a id="navOrder" class="nav-item nav-link" href="menu.html" onclick="setCurrent(3)"><span id="current"><b>ORDER & CONTACT</b></span></a>
+            <a id="navMenu" class="nav-item nav-link" href="locations.html" onclick="setCurrent(2)"><span id="current"><b></b>LOCATIONS</b></span></a>
+            <a id="navOrder" class="nav-item nav-link" href="menu.html" onclick="setCurrent(3)">ORDER & CONTACT</a>
             <a id="navEvent" class="nav-item nav-link" href="events.html" onclick="setCurrent(4)">EVENTS</a>
             <a class="nav-item nav-link" href="#"><i class="fab fa-facebook-f" style="color:white;"></i></a>
             <a class="nav-item nav-link" href="#"><i class="fab fa-instagram" style="color:white;"></i></a>
@@ -54,9 +53,7 @@
                 <h2>THE LOCATIONS</h2>
             </div>
             <p>
-                Please select pick-up locations to get your food from. Your food will be ready as soon as possible. (waiting time: around 30 min)
-                <br>
-                Click on the dark highlighted area with the names of the Pantry Trucks to select a pick-up location. After selecting a pick-up location, scroll down to fill in your credentials to submit your order.
+                These are the locations that we do serve food currently
             </p>
 
         </div>
@@ -65,7 +62,7 @@
 
             <div id="1" class="truck">
                 <img src="https://media.istockphoto.com/photos/mike-n-willies-food-truck-in-brooklyn-nyc-picture-id458929599" alt="">
-                <div class="explanation" onclick="addLocation(1)">
+                <div class="explanation">
                     <h3>Cannon Park Pantry Truck</h3>
                     <p>Our Food Pantry Truck will be available at Cannon Park, Middlebury, Vermont, USA.</p>
                 </div>
@@ -74,7 +71,7 @@
 
             <div id="2" class="truck">
                 <img src="https://www.berkeleyside.org/wp-content/uploads/2021/03/Kolobok-at-Armistice-Brewing-720x540.jpeg" alt="">
-                <div class="explanation" onclick="addLocation(2)">
+                <div class="explanation">
                     <h3>Blessed Virgin Mary Church Pantry Truck</h3>
                     <p>Our Food Pantry Truck will be available at Blessed Virgin Mary Church, Middlebury, Vermont, USA.</p>
                 </div>
@@ -83,7 +80,7 @@
 
             <div id="3" class="truck">
                 <img src="https://static01.nyt.com/images/2021/06/08/multimedia/24sp-smallbiz-foodtrucks2/24sp-smallbiz-foodtrucks2-videoSixteenByNineJumbo1600.jpg" alt="">
-                <div class="explanation" onclick="addLocation(3)">
+                <div class="explanation">
                     <h3>Brian Hillerman Park Pantry Truck</h3>
                     <p>Our Food Pantry Truck will be available at Brian Hillerman Park, Middlebury, Vermont, USA.</p>
                 </div>
@@ -93,129 +90,8 @@
     </section>
     <!--------------------->
 
-    <!----Submit Order----->
-
-
-    <!------Main Info------>
-    <section id="main">
-        <div class="container-wrap">
-            <div class="wrap d-md-flex align-items-xl-end">
-                <div id="info">
-                    <div class="row">
-                        <div class="column">
-                            <i class="fas fa-phone-alt" style="color:orange;"></i>
-                            <div class="text">
-                                <h5>+1 (802) 443-5000</h5>
-                                <p>Our customer service is ready for your orders anytime during office hours.</p>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <i class="fas fa-location-arrow" style="color:orange;"></i>
-                            <div class="text">
-                                <h5>14 Old Chapel Rd</h5>
-                                <p>14 Old Chapel Rd, Middlebury, VT 05753, United States</p>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <i class="far fa-clock" style="color:orange;"></i>
-                            <div class="text">
-                                <h5>Open Monday-Friday</h5>
-                                <p>8:00am - 9:00pm</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="book">
-                    <h4><b>SUBMIT ORDER</b></h4>
-                    <form action="#" class="appointment-form">
-                        <div class="d-md-flex">
-                            <div class="form-group">
-                                <input id="firstName" type="text" class="form-control" placeholder="First Name" required onchange="filled()">
-                            </div>
-                            <div class="form-group ml-md-4">
-                                <input id="lastName" type="text" class="form-control" placeholder="Last Name" required onchange="filled()">
-                            </div>
-                        </div>
-                        <div class="d-md-flex">
-                            <div class="form-group">
-                                <input id="email" type="email" class="form-control" placeholder="Email" required onchange="filled()">
-                            </div>
-                            <div class="form-group ml-md-4">
-                                <input id="order2" type="submit" value="Finish Order" class="btn btn-white py-3 px-4" onclick="order()">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--------------------->
-
-
-
-    <!--<section id="submitOrder" style="
-    color:  white;
-    display: flex;
-    justify-content: center;
-"><div class="orderContainer" style="
-    display: flex;
-    padding-top: 2rem;
-    /* padding-left: 0; */
-    /* padding-right: 0; */
-    width: 35%;
-    background: rgb(190, 142, 52);
-    flex-direction: column;
-    border-radius: 15px;
-    align-items: center;
-">
-        <div class="header" style="
-    padding-bottom: 2vh;
-    text-align: center;
-    border-bottom: 1px solid white;
-    width: 75%;
-">
-            <h1>Submit Order</h1>
-            <p style="
-    padding: 0;
-">Enter your email to submit order.</p>
-        </div>
-        <form style="
-    padding: 1rem;
-    padding-top: 4vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-">
-            <div class="form-group" style="
-    /* margin: 1rem; */
-    width: 75%;
-">
-                <input type="email" class="form-control" placeholder="Email" required="" style="
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid white;
-    border-radius: 0;
-">
-            </div>
-            <div class="form-group" style="
-    text-align: center;
-">
-                <input id="submit" type="submit" value="Order" class="btn btn-white py-3 px-4">
-            </div>
-        </form>
-    </div>
-    </section>-->
-    <!--------------------->
-
-    <!--<div class="orderContainer">
-            
-        <button id="order2">Submit Order</button>
-    </div>-->
-    
-
     <!-------Footer-------->
-    <!--<section id="footer">
+    <section id="footer">
         <div class="row5">
             <div class="column">
                 <i class="fas fa-phone-alt" style="color:orange;"></i>
@@ -239,7 +115,7 @@
                 </div>
             </div>
         </div>
-    </section>-->
+    </section>
     <!--------------------->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
