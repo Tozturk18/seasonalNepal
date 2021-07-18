@@ -15,39 +15,40 @@ function setDate() {
     document.getElementById("datefield").setAttribute("min", delayDate);
 }
 
-function eventFilled() {
-    var firstName = document.getElementById("firstName1");
-    var lastName = document.getElementById("lastName1");
-    var email = document.getElementById("email1");
-    var button = document.getElementById("submit1");
+function eventFilled(id) {
+    var firstName = document.getElementById("firstName" + id);
+    var lastName = document.getElementById("lastName" + id);
+    var email = document.getElementById("email" + id);
+    var button = document.getElementById("submit" + id);
 
     if (firstName.value != "" && lastName.value != "" && email.value != "") {
         button.disabled = false;
     }
 }
 
-function expand() {
-    var purchaseScreen = document.getElementById("book1");
+function expand(id) {
+
+    var purchaseScreen = document.getElementById("book" + id);
 
     purchaseScreen.style.visibility = "visible";
     purchaseScreen.style.height = "auto";
     purchaseScreen.style.opacity = "1";
 }
 
-function purchase() {
+function purchase(id) {
 
-    sendReceipt();
+    sendReceipt(id);
 
 }
 
-function sendReceipt() {
+function sendReceipt(id) {
 
-    var firstName = document.getElementById("firstName1");
-    var lastName = document.getElementById("lastName1");
-    var tel = document.getElementById("tel1");
-    var email = document.getElementById("email1")
-    var button = document.getElementById("submit1");
-    var eventName = document.getElementById("1").querySelector("#title").innerHTML;
+    var firstName = document.getElementById("firstName" + id);
+    var lastName = document.getElementById("lastName" + id);
+    var tel = document.getElementById("tel" + id);
+    var email = document.getElementById("email" + id)
+    var button = document.getElementById("submit" + id);
+    var eventName = document.getElementById(id).querySelector("#title").innerHTML;
 
 
     Email.send({
@@ -80,7 +81,7 @@ function sendReceipt() {
     email.value = "";
         
     button.disabled = true;
-    var purchaseScreen = document.getElementById("book1");
+    var purchaseScreen = document.getElementById("book" + id);
 
     purchaseScreen.style.visibility = "hidden";
     purchaseScreen.style.height = "0";

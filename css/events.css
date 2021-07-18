@@ -134,7 +134,7 @@ nav {
     margin-right: 2rem;
 }
 
-.pastEvents{
+.pastEvents h1{
     text-align: center;
     margin-bottom: 3rem;
     border-bottom: 1px solid white;
@@ -154,7 +154,7 @@ nav {
 
 .title h3 {
     text-align:center;
-    margin-left:40px;
+    padding-left: 0 !important;
     white-space:pre-wrap;
 }
 
